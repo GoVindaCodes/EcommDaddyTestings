@@ -34,6 +34,7 @@ import requests from "services/httpService";
 
 const Orders = () => {
   const {
+    limitData,
     // time,
     setTime,
     // currentPage,
@@ -268,22 +269,24 @@ const Orders = () => {
                     currency={globalSetting?.default_currency || "$"}
                   />
                 </Table>
-
-                <TableFooter>
-                  {/* <Pagination
-                    totalResults={data?.orders.length}
-                    resultsPerPage={2}
-                    onChange={handleChangePage}
-                    label="Table navigation"
-                  /> */}
-                  {/* this works  */}
-                  <Pagination
+                <TableContainer className="mb-8">
+                  <TableFooter>
+                    {/* added by : Govinda 04/22/204 */}
+                    <Pagination
+                      totalResults={data?.orders?.length}
+                      resultsPerPage={limitData}
+                      onChange={handleChangePage}
+                      label="Table navigation"
+                    />
+                    {/* this works  */}
+                    {/* <Pagination
                     totalResults={data?.totalDoc}
                     resultsPerPage={handleChangePage}
                     onChange={handleChangePage}
                     label="Table navigation"
-                  />
-                </TableFooter>
+                  /> */}
+                  </TableFooter>
+                </TableContainer>
               </TableContainer>
             ) : (
               <NotFound title="Sorry, There are no orders right now." />

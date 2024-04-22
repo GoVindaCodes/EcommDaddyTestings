@@ -257,7 +257,8 @@ const Category = () => {
 
               <TableFooter>
                 <Pagination
-                  totalResults={totalResults}
+                  // totalResults={totalResults}
+                  totalResults={data?.length}
                   resultsPerPage={resultsPerPage}
                   onChange={handleChangePage}
                   label="Table navigation"

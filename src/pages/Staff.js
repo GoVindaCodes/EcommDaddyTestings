@@ -57,21 +57,21 @@ const Staff = () => {
 
 
   const { t } = useTranslation();
-  const [coupons, setCoupons] = useState([]);
-  // console.log("allID : ", allId)
-  useEffect(() => {
-    const fetchLanguages = async () => {
-      try {
-        console.log("Fetching Coupons...");
-        const response = await requests.get('/api/admin');
-        console.log("admin fetched successfully:", response);
-        setCoupons(response);
-      } catch (error) {
-        console.error('Error fetching languages:', error);
-      }
-    };
-    fetchLanguages();
-  }, []);
+  // const [coupons, setCoupons] = useState([]);
+  // // console.log("allID : ", allId)
+  // useEffect(() => {
+  //   const fetchLanguages = async () => {
+  //     try {
+  //       console.log("Fetching Coupons...");
+  //       const response = await requests.get('/api/admin');
+  //       console.log("admin fetched successfully:", response);
+  //       setCoupons(response);
+  //     } catch (error) {
+  //       console.error('Error fetching languages:', error);
+  //     }
+  //   };
+  //   fetchLanguages();
+  // }, []);
 
   return (
     <>
@@ -138,7 +138,7 @@ const Staff = () => {
                   <TableCell>{t("StaffJoiningDateTbl")}</TableCell>
                   <TableCell>{t("StaffRoleTbl")}</TableCell>
                   <TableCell className="text-center">{t("OderStatusTbl")}</TableCell>
-                  <TableCell className="text-center">{t("PublishedTbl")}</TableCell>
+                  {/* <TableCell className="text-center">{t("PublishedTbl")}</TableCell> */}
 
                   <TableCell className="text-right">{t("StaffActionsTbl")}</TableCell>
                 </tr>
